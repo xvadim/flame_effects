@@ -60,17 +60,13 @@ class EffectsGame extends FlameGame with HasGameRef<FlameGame> {
       [
         MoveEffect.to(
           Vector2(canvasSize.x * 0.75, canvasSize.y / 2),
-          // EffectController(duration: 1),
           EffectController(duration: 1, curve: Curves.fastOutSlowIn),
         ),
         ScaleEffect.to(
           Vector2.all(1.5),
           EffectController(duration: 1, curve: Curves.easeInOutBack),
         ),
-        OpacityEffect.to(
-          0.5,
-          EffectController(duration: 0.3),
-        ),
+        OpacityEffect.to(0.5, EffectController(duration: 0.3)),
         RemoveEffect(delay: .5),
       ],
     );
